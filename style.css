@@ -150,7 +150,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     
     /* FIXES ADDED HERE: Force block width handling and explicit max-size */
-   padding: 4px 0;
+   padding: 2px 0;
     line-height: normal;
     
     animation: 
