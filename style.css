@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PREMIUM GLASSMORPHISM & FLUID ANIMATION STYLESHEET
+   PREMIUM GLASSMORPHISM & FLUID ANIMATION STYLESHEET WITH TYPEWRITER ENGINE
    ========================================================================== */
 
 :root {
@@ -79,17 +79,23 @@ body {
     }
 }
 
-/* Subtle Breathing Animation for Title */
-@keyframes textGlowBreathing {
-    0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0); }
-    50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
-}
-
 /* Metallic Edge Shimmer Link Effect */
 @keyframes cardShimmer {
     0% { left: -150%; }
     50% { left: 150%; }
     100% { left: 150%; }
+}
+
+/* Typewriter Steps Execution */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Cursor Blink Execution */
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent); }
 }
 
 
@@ -118,15 +124,36 @@ h1 {
     font-weight: 800;
     letter-spacing: -0.03em;
     margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.highlight {
+/* Typewriter Container & Text Configurations */
+.typewriter-container {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.typewriter {
     color: var(--accent);
+    display: inline-block;
+    font-family: monospace;
+    border-right: 3px solid var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 1px;
     background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    animation: textGlowBreathing 4s infinite ease-in-out;
+    
+    /* 8 Steps matching exactly 8 letters in 'Karthees' */
+    animation: 
+        typing 2s steps(8) 0.6s forwards,
+        blink 0.75s step-end infinite;
+    width: 0; /* Starts locked shut until animation triggers */
 }
 
 .subtitle {
@@ -135,6 +162,20 @@ h1 {
     margin-bottom: 16px;
     font-weight: 500;
     letter-spacing: -0.01em;
+}
+
+.location {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.location i {
+    color: var(--accent);
 }
 
 .bio {
@@ -253,7 +294,7 @@ h1 {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Individual Pill Physics Hover */
+/* Individual Pill Hover Dynamics */
 .tech-pill {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: default;
@@ -285,11 +326,11 @@ h1 {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     position: relative;
-    overflow: hidden; /* Vital for internal light sweep */
+    overflow: hidden;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Premium Light Sweep Overlay Setup */
+/* Light Sweep Overlay */
 .project-card::before {
     content: '';
     position: absolute;
@@ -306,7 +347,6 @@ h1 {
     transform: skewX(-25deg);
 }
 
-/* Trigger Light Sweep on Hover */
 .project-card:hover::before {
     animation: cardShimmer 1.5s ease-out infinite;
 }
@@ -337,8 +377,22 @@ h1 {
     margin-bottom: 22px;
 }
 
-/* Premium Tag Styling Updates */
+/* Project Tag Updates */
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
 .tags li {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border: 1px solid var(--glass-border);
     transition: all 0.25s ease;
 }
 
@@ -352,13 +406,33 @@ h1 {
 
 /* --- BUTTON MECHANICS --- */
 .btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .btn-primary:hover {
     background: #1d4ed8;
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.45);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
 }
 
 .btn-secondary:hover {
@@ -378,7 +452,7 @@ footer {
 }
 
 @media(max-width: 768px) {
-    h1 { font-size: 2.8rem; }
+    h1 { font-size: 2.4rem; justify-content: center; }
     .subtitle { font-size: 1.2rem; }
     .projects-grid { grid-template-columns: 1fr; }
     .edu-header { flex-direction: column; align-items: flex-start; gap: 4px; }
