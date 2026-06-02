@@ -151,6 +151,7 @@ h1 {
     
     /* FIXES ADDED HERE: Force block width handling and explicit max-size */
    padding: 2px 0;
+   margin-bottom: 12px;
     line-height: normal;
     
     animation: 
