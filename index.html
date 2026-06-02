@@ -5,44 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karthees512 | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Embedded premium overrides for instant high-end visuals */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --green-gradient: linear-gradient(135deg, #10b981 0%, #047857 100%);
+            --glass-card: rgba(17, 24, 39, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.07);
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: radial-gradient(circle at 50% 0%, #1e2640 0%, #0d0f12 50%);
+            position: relative;
+        }
+
+        /* Ambient Background Blur Orbs */
+        .ambient-orb-1 {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: rgba(37, 99, 235, 0.15);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-orb-2 {
+            position: absolute;
+            top: 600px;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(16, 185, 129, 0.04);
+            filter: blur(130px);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Global Structural Enhancements */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: #3b82f6;
+            font-size: 1.4rem;
+        }
+
+        /* Premium Education Card Layout */
+        .edu-badge-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .grade-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .sem-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Tech Badges Grid */
+        .tech-category-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #3b82f6;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pill-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+            font-weight: 500;
+        }
+
+        /* Premium Scrollbar for modern browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0f12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222733;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Dynamic Visual Lighting Elements -->
+    <div class="ambient-orb-1"></div>
+    <div class="ambient-orb-2"></div>
+
+    <!-- Hero Identity Section -->
     <header class="hero">
         <div class="container">
             <h1 class="glitch">Hi, I'm <span class="highlight">Karthees</span></h1>
             <p class="subtitle">Python Developer & AI Architecture Integrator</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
             <p class="bio">Building clean, intelligent full-stack applications with Deep Learning. Focused on automated systems and intuitive user interfaces.</p>
             <div class="social-links">
                 <a href="https://github.com/karthees512" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="mailto:your-email@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/karthees-p" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:karthees671@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="tel:+917904390473"><i class="fas fa-phone"></i> Call</a>
             </div>
         </div>
     </header>
 
-    <section class="skills">
+    <!-- Academic Background Section -->
+    <section class="education">
         <div class="container">
-            <h2>Tech Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><h3>Languages</h3><p>Python, Java, JavaScript, HTML5, CSS3</p></div>
-                <div class="skill-card"><h3>AI & ML</h3><p>TensorFlow, Keras, NumPy, NLTK</p></div>
-                <div class="skill-card"><h3>Frameworks</h3><p>Flask, Bootstrap</p></div>
-                <div class="skill-card"><h3>Tools</h3><p>Git, GitHub, Replit, Docker</p></div>
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Academic Background</h2>
+            <div class="education-card">
+                <div class="edu-header">
+                    <h3>B.Sc. Computer Science</h3>
+                    <span class="duration">2023 — 2026</span>
+                </div>
+                <p class="college">P.K.N Arts & Science College</p>
+                <div class="edu-badge-container">
+                    <div class="grade-badge">
+                        <i class="fas fa-chart-line"></i> CGPA: 7.17
+                    </div>
+                    <span class="sem-text">Evaluated through 5th Semester</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills Architecture Section -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-code-branch"></i> Core Expertise & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="tech-category-title">Languages</div>
+                    <div class="pill-box">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Java</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">HTML5</span>
+                        <span class="tech-pill">CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="tech-category-title">AI & Deep Learning</div>
+                    <div class="pill-box">
+                        <span class="tech-pill">TensorFlow 2.x</span>
+                        <span class="tech-pill">Keras Architectures</span>
+                        <span class="tech-pill">NumPy</span>
+                        <span class="tech-pill">NLTK Pipeline</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="tech-category-title">Web Application Frameworks</div>
+                    <div class="pill-box">
+                        <span class="tech-pill">Flask Server</span>
+                        <span class="tech-pill">Bootstrap UI</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="tech-category-title">Tools & Engineering Environments</div>
+                    <div class="pill-box">
+                        <span class="tech-pill">Git Logic</span>
+                        <span class="tech-pill">GitHub Pipelines</span>
+                        <span class="tech-pill">Replit Containerization</span>
+                        <span class="tech-pill">Docker Core</span>
+                        <span class="tech-pill">Linux Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Engineering Section -->
     <section class="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
+            <h2 class="section-title"><i class="fas fa-cubes"></i> Featured Core Repositories</h2>
             <div class="projects-grid">
                 
+                <!-- Project Card 1: Chatbot -->
                 <div class="project-card animate-card">
                     <div class="project-header">
                         <i class="fas fa-robot project-icon"></i>
-                        <h3>College AI Assistant</h3>
+                        <h3>P.K.N College AI Assistant</h3>
                     </div>
                     <p>A full-stack conversational AI trained using Deep Learning to guide users through dynamic college information and campus data seamlessly.</p>
                     <ul class="tags">
@@ -52,11 +245,12 @@
                         <li>NLTK</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/karthees512/Ai_Chatbot" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
-                        <a href="https://college-chatbot--karthees671.replit.app" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/karthees512/Ai_Chatbot" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://college-chatbot--karthees671.replit.app" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Launch App</a>
                     </div>
                 </div>
 
+                <!-- Project Card 2: Jarvis -->
                 <div class="project-card animate-card">
                     <div class="project-header">
                         <i class="fas fa-terminal project-icon"></i>
@@ -69,7 +263,7 @@
                         <li>Speech Processing</li>
                     </ul>
                     <div class="project-links">
-                        <a href="#" class="btn btn-secondary"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/karthees512/Jarvis" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
 
@@ -77,6 +271,7 @@
         </div>
     </section>
 
+    <!-- Footer Identity Area -->
     <footer>
         <p>&copy; 2026 Karthees512. Handcrafted with Python & passion.</p>
     </footer>
