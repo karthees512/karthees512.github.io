@@ -145,15 +145,17 @@ h1 {
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: 1px;
-    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    background: linear-gradient(135deg, #71abf3 0%, #437bf4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* 8 Steps matching exactly 8 letters in 'Karthees' */
+    /* FIXES ADDED HERE: Force block width handling and explicit max-size */
+    width: 0;
+    max-width: max-content; 
+    
     animation: 
         typing 2s steps(8) 0.6s forwards,
         blink 0.75s step-end infinite;
-    width: 0; /* Starts locked shut until animation triggers */
 }
 
 .subtitle {
